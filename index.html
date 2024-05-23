@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- -----google fonts--- -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <!-- -----bootstrap---- -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- -----fontawsem---- -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- -----style sheet----- -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Bookmark</title>
+  </head>
+  <body>
+    <div
+      class="container flex-column d-flex justify-content-center align-items-center"
+    >
+      <h1 class="my-5 fw-medium">Bookmarker</h1>
+      <hr />
+      <div class="row w-100">
+        <div
+          class="col d-flex flex-column justify-content-center align-items-center"
+        >
+          <h2 class="fs-4 fw-medium mb-4">
+            <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+          <form class="w-100">
+            <label class="form-label" for="siteName"
+              ><i class="fa-solid fa-book-bookmark pe-2"></i> Site Name
+            </label>
+            <input
+              class="form-control mb-4 fw-normal"
+              id="siteName"
+              type="text"
+              name="fullName"
+              value=""
+              placeholder=" Bookmark Name"
+              onkeyup="nameValidation()"
+            />
+            <label class="form-label" for="siteUrl">
+              <i class="fa-solid fa-link pe-2"></i> Site URL
+            </label>
+            <input
+              class="form-control mb-3 fw-normal"
+              id="siteUrl"
+              type="text"
+              name="fullName"
+              value=""
+              placeholder=" Website URL"
+              onkeyup="urlValidation()"
+            />
+            <div class="text-center py-3">
+              <button
+                type="button"
+                class="btn btn-danger py-2 px-5"
+                onclick="addSite()"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr />
+      <div class="row w-100">
+        <div class="col">
+          <table class="table">
+            <thead class="text-center">
+              <th>Index</th>
+              <th>Website Name</th>
+              <th>Visit</th>
+              <th>Delete</th>
+            </thead>
+            <tbody class="text-center" id="tableBody">
+              <tr></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--validation alert  -->
+    <div class="modal" id="validationAlert" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="d-flex justify-content-between mb-4">
+              <div>
+                <i class="fa-solid fa-circle fa-lg text-danger"></i>
+                <i class="fa-solid fa-circle fa-lg text-warning"></i>
+                <i class="fa-solid fa-circle fa-lg text-success"></i>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                onclick="closeValidationAlert()"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <h4 class="mb-4">
+              Site Name or Url is not valid, Please follow the rules below :
+            </h4>
+            <ul>
+              <li class="mb-3">Site name must contain at least 3 characters</li>
+              <li>Site URL must be a valid one</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
